@@ -1,0 +1,7 @@
+[
+	{"key": "w", "action": "up"},
+	{"key": "a", "action": "left"},
+	{"key": "s", "action": "down"},
+	{"key": "d", "action": "right"},
+	{"key": "e", "action": "use"}
+]

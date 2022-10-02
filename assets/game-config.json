@@ -1,0 +1,21 @@
+{
+	"startScene": "game.scenes.MenuScene",
+	"inputBinds": [
+		{"key": "w", "action": "up"},
+		{"key": "a", "action": "left"},
+		{"key": "s", "action": "down"},
+		{"key": "d", "action": "right"},
+		{"key": "e", "action": "use"}
+	],
+	"deathText": {
+		"side": "The squares have crossed sides\nLight cannot live in darkness\nThe game is over",
+		"enemy": "The square is punctured\nSharp angles are dangerous\nThe game is over",
+		"target": "Circle wasn't touched\nIt's important to touch them\nThe game is over",
+		"bullet": "Hit by a bullet\nAll life must come to an end\nThe game is over",
+		"bomb": "You blew yourself up\nYou really shouldn't do that\nThe game is over"
+	},
+	"tutorialText": {
+		"wasd": "WASD to move",
+		"bomb": "Press E to place bombs"
+	}
+}

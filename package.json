@@ -1,0 +1,14 @@
+{
+  "name": "radare",
+  "license": "MIT",
+  "scripts": {
+    "start": "lovec .",
+    "build": "tstl",
+    "watch": "tstl -w"
+  },
+  "devDependencies": {
+    "love-typescript-definitions": "^0.24.1",
+    "lua-types": "^2.11.0",
+    "typescript-to-lua": "^1.9"
+  }
+}
