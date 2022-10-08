@@ -18,7 +18,7 @@ export class Bullet extends GameObject {
 		blackImg.setBlackStencil();
 
 		let whiteImg = this.addComponent(ImageRenderer, "bullet-white");
-		whiteImg.setColor(1, 1, 1, 0.25);
+		whiteImg.setColor(1, 1, 1, 0.2);
 		whiteImg.setOrigin(0.5, 0.5);
 		whiteImg.setWhiteStencil();
 

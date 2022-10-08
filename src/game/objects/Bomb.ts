@@ -83,14 +83,14 @@ export class Bomb extends GameObject {
 
 		let enemies = this.scene.findObjectsOfType(Enemy);
 		enemies = enemies.filter(enemy => {
-			let inRange = lume.distance(enemy.transform.x, enemy.transform.y, this.transform.x, this.transform.y) <= (350 / 2);
+			let inRange = lume.distance(enemy.transform.x, enemy.transform.y, this.transform.x, this.transform.y) <= (325 / 2);
 			let visible = enemy.getComponent(SideListener).touchingBlack;
 			return inRange && visible;
 		});
 		enemies.forEach(e => e.destroy());
 
 		let players = [this.scene.player, this.scene.mirrorPlayer];
-		players = players.filter(p => lume.distance(p.transform.x, p.transform.y, this.transform.x, this.transform.y) <= (320 / 2));
+		players = players.filter(p => lume.distance(p.transform.x, p.transform.y, this.transform.x, this.transform.y) <= (270 / 2));
 		players.forEach(p => p.explode());
 
 		this.destroy();

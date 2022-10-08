@@ -1,5 +1,6 @@
 import { ImageRenderer } from "core/components/ImageRenderer";
 import { PhysicsBody } from "core/components/PhysicsBody";
+import { Easing } from "core/Easing";
 import { GameObject } from "core/objects/GameObject";
 import { PhysType } from "game/CollisionMap";
 import { FaceTarget } from "game/components/FaceTarget";
@@ -36,8 +37,40 @@ export class Enemy extends GameObject {
 	}
 
 	update(dt: number): void {
-		this.active = !this.getComponent(SideListener).touchingWhite;
 		super.update(dt);
+		let sideListener = this.getComponent(SideListener);
+		let faceTarget = this.getComponent(FaceTarget);
+
+		if (this.active && sideListener.touchingWhite) {
+			this.addTween({
+				targets: this.transform,
+				props: { scale: 0.5 },
+				duration: 0.5,
+				ease: Easing.QuadOut,
+			});
+			this.addTween({
+				targets: faceTarget,
+				props: { offset: Math.PI },
+				duration: 0.5,
+				ease: Easing.QuadOut,
+			});
+		}
+		if (!this.active && !sideListener.touchingWhite) {
+			this.addTween({
+				targets: this.transform,
+				props: { scale: 1 },
+				duration: 0.7,
+				ease: Easing.QuadOut,
+			});
+			this.addTween({
+				targets: faceTarget,
+				props: { offset: 0 },
+				duration: 0.7,
+				ease: Easing.QuadOut,
+			});
+		}
+
+		this.active = !sideListener.touchingWhite;
 	}
 
 	shoot(): void {

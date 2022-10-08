@@ -1,7 +1,7 @@
 import { ImageLoaderArgs, ImageLoader } from "../assets/ImageLoader";
 import { Source } from "love.audio";
 import { Image } from "love.graphics";
-import { Audio } from "game/Audio";
+import { Audio } from "./Audio";
 
 export class AssetCache {
 
